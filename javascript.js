@@ -46,8 +46,21 @@ function playRound(playerSelection, computerSelection){
 
 function game(){
     for(let i = 0; i < 5; i++){
-        let selection = prompt("Enter Rock, Paper or Scissors");
-        const playerSelection = selection.toUpperCase();
+        let keepGoing = true;
+        let selection;
+        let playerSelection;
+        while(keepGoing){
+        selection = prompt("Enter Rock, Paper or Scissors");
+        playerSelection = selection.toUpperCase();
+
+            if(playerSelection === "ROCK" || playerSelection === "PAPER" || playerSelection ==="SCISSORS" ){
+                keepGoing = false;
+
+            }else{
+                console.log("Invalid entry")
+            }
+
+    }
         
         console.log("Player chose " + playerSelection);
         const computerSelection = computerPlay();
