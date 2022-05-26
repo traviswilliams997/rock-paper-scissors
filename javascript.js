@@ -42,8 +42,10 @@ function playRound(playerSelection, computerSelection){
     }
 
 }
-const playerSelection = "SCISSORS";
-console.log("Payer chose " + playerSelection);
+let selection = prompt("Enter Rock, Paper or Scissors");
+const playerSelection = selection.toUpperCase();
+
+console.log("Player chose " + playerSelection);
 const computerSelection = computerPlay();
 console.log("Computer chose " + computerSelection);
 let result = playRound(playerSelection, computerSelection);
