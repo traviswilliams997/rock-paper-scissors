@@ -57,7 +57,7 @@ function game(){
     for(let i = 0; i < 5; i++){
         
         //input variable to store before making case insesitive
-        let selection;
+        let userInput;
         //case insesitive user input
         let playerSelection;
         
@@ -65,8 +65,8 @@ function game(){
 
         //check if user input is rock paper or scissors. force them to enter correct input
         while(keepGoing){
-        selection = prompt("Enter Rock, Paper or Scissors");
-        playerSelection = selection.toUpperCase();
+        userInput = prompt("Enter Rock, Paper or Scissors");
+        playerSelection = userInput.toUpperCase();
 
             if(playerSelection === "ROCK" || playerSelection === "PAPER" || playerSelection ==="SCISSORS" ){
                 keepGoing = false;
