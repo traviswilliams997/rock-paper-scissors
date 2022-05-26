@@ -1,6 +1,11 @@
+
+//function determines computer choice 
 function computerPlay(){
+
+    //random number between 0 and 100
     let randomNumber = Math.floor(Math.random()*100) + 1;
 
+    //return rock paper or scissors 1/3 of the time
     if(randomNumber <= 33){
         return "ROCK";
     }else if(randomNumber >= 67){
@@ -9,6 +14,8 @@ function computerPlay(){
         return "SCISSORS";
     }
 }
+
+//function determines who won
 
 function playRound(playerSelection, computerSelection){
     if( computerSelection === "ROCK" && playerSelection === "SCISSORS"){
@@ -45,10 +52,18 @@ function playRound(playerSelection, computerSelection){
 
 
 function game(){
+
+    //5 rounds of rock paper scissors
     for(let i = 0; i < 5; i++){
-        let keepGoing = true;
+        
+        //input variable to store before making case insesitive
         let selection;
+        //case insesitive user input
         let playerSelection;
+        
+        let keepGoing = true;
+
+        //check if user input is rock paper or scissors. force them to enter correct input
         while(keepGoing){
         selection = prompt("Enter Rock, Paper or Scissors");
         playerSelection = selection.toUpperCase();
@@ -64,7 +79,7 @@ function game(){
         
         console.log("Player chose " + playerSelection);
         const computerSelection = computerPlay();
-        console.log("Computer played " + computerSelection);
+        console.log("Computer chose " + computerSelection);
         let result = playRound(playerSelection, computerSelection);
         console.log(result);
     }
