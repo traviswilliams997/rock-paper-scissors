@@ -42,11 +42,18 @@ function playRound(playerSelection, computerSelection){
     }
 
 }
-let selection = prompt("Enter Rock, Paper or Scissors");
-const playerSelection = selection.toUpperCase();
 
-console.log("Player chose " + playerSelection);
-const computerSelection = computerPlay();
-console.log("Computer chose " + computerSelection);
-let result = playRound(playerSelection, computerSelection);
-console.log(result);
+
+function game(){
+    for(let i = 0; i < 5; i++){
+        let selection = prompt("Enter Rock, Paper or Scissors");
+        const playerSelection = selection.toUpperCase();
+        
+        console.log("Player chose " + playerSelection);
+        const computerSelection = computerPlay();
+        console.log("Computer played " + computerSelection);
+        let result = playRound(playerSelection, computerSelection);
+        console.log(result);
+    }
+}
+game();
