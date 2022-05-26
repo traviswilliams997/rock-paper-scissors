@@ -2,11 +2,49 @@ function computerPlay(){
     let randomNumber = Math.floor(Math.random()*100) + 1;
 
     if(randomNumber <= 33){
-        return "Rock";
+        return "ROCK";
     }else if(randomNumber >= 67){
-        return "Paper";
+        return "PAPER";
     } else {
-        return "Scissors";
+        return "SCISSORS";
     }
 }
-console.log(computerPlay());
+
+function playRound(playerSelection, computerSelection){
+    if( computerSelection === "ROCK" && playerSelection === "SCISSORS"){
+        return "You Lose! Rock beats Scissors";
+    }
+    if( computerSelection === "ROCK" && playerSelection === "ROCK"){
+        return "It's a draw! Rock ties Rock";
+    }
+    if( computerSelection === "ROCK" && playerSelection === "PAPER"){
+        return "You Win! Rock beats Paper";
+    }
+
+    if( computerSelection === "SCISSORS" && playerSelection === "PAPER"){
+        return "You Lose! Scissors beats Paper";
+    }
+    if( computerSelection === "SCISSORS" && playerSelection === "SCISSORS"){
+        return "It's a draw! Scissors ties Scissors";
+    }
+    if( computerSelection === "SCISSORS" && playerSelection === "ROCK"){
+        return "You Win! Rock beats Scissors";
+    }
+
+    if( computerSelection === "PAPER" && playerSelection === "ROCK"){
+        return "You Lose! Paper beats Rock";
+    }
+    if( computerSelection === "PAPER" && playerSelection === "PAPER"){
+        return "It's a draw! Paper ties Paper";
+    }
+    if( computerSelection == "PAPER" && playerSelection === "SCISSORS"){
+        return "You Win! Scissors beats Paper";
+    }
+
+}
+const playerSelection = "SCISSORS";
+console.log("Payer chose " + playerSelection);
+const computerSelection = computerPlay();
+console.log("Computer chose " + computerSelection);
+let result = playRound(playerSelection, computerSelection);
+console.log(result);
