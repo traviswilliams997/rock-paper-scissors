@@ -58,7 +58,7 @@ function game(){
         
         //input variable to store before making case insesitive
         let userInput;
-        //case insesitive user input
+        //case insesitive user input variable
         let playerSelection;
         
         let keepGoing = true;
