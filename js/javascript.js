@@ -60,14 +60,14 @@ function game(){
     let playerScore = 0;
     let computerScore = 0;
 
-    
-
  
     const btnrock = document.querySelector('#rock');
     const btnpaper = document.querySelector('#paper');
     const btnscissors = document.querySelector('#scissors');
     const resultscontainer = document.querySelector('#resultscontainer');
     const scorecontainer = document.querySelector('#scorecontainer');
+    const winorlose = document.querySelector('#winorlose');
+    const winlose = document.createElement('div');
     const score = document.createElement('div');
     score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
     scorecontainer.appendChild(score);
@@ -96,7 +96,24 @@ function game(){
 
         }
         
-        resultscontainer.appendChild(results);
+        if(playerScore < 5 && computerScore < 5){
+
+            resultscontainer.appendChild(results);
+
+         }else{
+           
+            if(playerScore > computerScore){
+
+             winlose.textContent = ' Game Over.You Won!';
+             winorlose.appendChild(winlose);
+             
+            }else{
+            winlose.textContent = 'Game Over. You Lost!';
+            winorlose.appendChild(winlose);
+         
+    }
+    }
+   
     });
    
     btnpaper.addEventListener('click', function() { 
@@ -122,7 +139,24 @@ function game(){
 
         }
 
-        resultscontainer.appendChild(results);
+        if(playerScore < 5 && computerScore < 5){
+
+            resultscontainer.appendChild(results);
+
+         }else{
+           
+            if(playerScore > computerScore){
+
+             winlose.textContent = ' Game Over.You Won!';
+             winorlose.appendChild(winlose);
+            }else{
+            winlose.textContent = 'Game Over. You Lost!';
+            winorlose.appendChild(winlose);
+    }
+   }
+
+
+        
      });
 
     btnscissors.addEventListener('click', function() {
@@ -147,15 +181,28 @@ function game(){
             scorecontainer.appendChild(score);
 
         }
+        if(playerScore < 5 && computerScore < 5){
 
-        resultscontainer.appendChild(results);
+            resultscontainer.appendChild(results);
+
+         }else{
+           
+            if(playerScore > computerScore){
+
+             winlose.textContent = ' Game Over.You Won!';
+             winorlose.appendChild(winlose);
+            }else{
+            winlose.textContent = 'Game Over. You Lost!';
+            winorlose.appendChild(winlose);
+    }
+       }
+
+        
 
     });
 
-    if(playerScore == 5 || computerScore == 5){
-        return;
-    }
- 
+  
+
 
 }
 
