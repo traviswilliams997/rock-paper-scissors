@@ -1,5 +1,5 @@
 
-//function determines computer choice 
+//this function determines computer choice 
 function computerPlay(){
 
     //random number between 0 and 100
@@ -15,7 +15,7 @@ function computerPlay(){
     }
 }
 
-//function determines who won
+//this function determines who won and returns message
 
 function playRound(playerSelection, computerSelection){
     if( computerSelection === "ROCK" && playerSelection === "SCISSORS"){
@@ -50,7 +50,7 @@ function playRound(playerSelection, computerSelection){
 
 }
 
-
+//this functions checks if either the play or computer has 5 points and announces the winner
 function checkIfOver(player, computer, resultscontainer, results, winorlose, winlose){
 
     if(player < 5 && computer < 5){
@@ -73,7 +73,7 @@ function checkIfOver(player, computer, resultscontainer, results, winorlose, win
 
 }
 
-
+//main function
 
 function game(){
 
@@ -92,6 +92,7 @@ function game(){
     score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
     scorecontainer.appendChild(score);
 
+    //button for player to choose rock
     btnrock.addEventListener('click', function() { 
         const results = document.createElement('div');
         results.classList.add('results');
@@ -99,7 +100,8 @@ function game(){
         results.textContent = ` ${ whoWon } `;
 
        
-
+        //Determines who won the round by checking if the word 'Win!' or 'Lose!' is in the string returned from the playRound function. 
+        //Icrements the appropiate players score based on that information and displays it  
         if(whoWon.search("Win!") != -1){
             playerScore++;
             score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
@@ -122,6 +124,7 @@ function game(){
    
     });
    
+    //button for player to choose paper
     btnpaper.addEventListener('click', function() { 
         const results = document.createElement('div');
         results.classList.add('results');
@@ -150,6 +153,10 @@ function game(){
 
         
      });
+
+
+    
+    //button for player to choose scissors
 
     btnscissors.addEventListener('click', function() {
         const results = document.createElement('div');
