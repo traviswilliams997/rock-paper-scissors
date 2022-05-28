@@ -25,7 +25,7 @@ function playRound(playerSelection, computerSelection){
         return "It's a draw! Rock ties Rock";
     }
     if( computerSelection === "ROCK" && playerSelection === "PAPER"){
-        return "You Win! Rock beats Paper";
+        return "You Win! Paper beats Rock";
     }
 
     if( computerSelection === "SCISSORS" && playerSelection === "PAPER"){
@@ -53,35 +53,65 @@ function playRound(playerSelection, computerSelection){
 
 function game(){
 
+    // const computerSelection = computerPlay();
+  
+
+    const btnrock = document.querySelector('#rock');
+
+    // btnrock.addEventListener('click', function() { 
+    //     console.log('Player chose Rock and computer chose ' + computerSelection );
+    // });
+
+    btnrock.addEventListener('click', function() { 
+        console.log(playRound('ROCK', computerPlay())); 
+    });
+
+    const btnpaper = document.querySelector('#paper');
+
+    // btnpaper.addEventListener('click', function() { 
+    //     console.log('Player chose Paper and computer chose ' + computerSelection );
+    // });
+
+    btnpaper.addEventListener('click', function() { 
+        console.log(playRound('PAPER', computerPlay()));
+     });
+
+    const btnscissors = document.querySelector('#scissors');
+
+    // btnscissors.addEventListener('click', function() {
+    //     console.log('Player chose Scissors and computer chose ' + computerSelection )
+    // });
+
+    btnscissors.addEventListener('click', function() {
+        console.log(playRound('SCISSORS', computerPlay()));
+    });
     
-    
         
-        //input variable to store before making case insesitive
-        let userInput;
-        //case insesitive user input variable
-        let playerSelection;
+    //     //input variable to store before making case insesitive
+    //     let userInput;
+    //     //case insesitive user input variable
+    //     let playerSelection;
         
-        let keepGoing = true;
+    //     let keepGoing = true;
 
-        //check if user input is rock paper or scissors. force them to enter correct input
-        while(keepGoing){
-        userInput = prompt("Enter Rock, Paper or Scissors");
-        playerSelection = userInput.toUpperCase();
+    //     //check if user input is rock paper or scissors. force them to enter correct input
+    //     while(keepGoing){
+    //     userInput = prompt("Enter Rock, Paper or Scissors");
+    //     playerSelection = userInput.toUpperCase();
 
-            if(playerSelection === "ROCK" || playerSelection === "PAPER" || playerSelection ==="SCISSORS" ){
-                keepGoing = false;
+    //         if(playerSelection === "ROCK" || playerSelection === "PAPER" || playerSelection ==="SCISSORS" ){
+    //             keepGoing = false;
 
-            }else{
-                console.log("Invalid entry")
-            }
+    //         }else{
+    //             console.log("Invalid entry")
+    //         }
 
-    }
+    // }
         
-        console.log("Player chose " + playerSelection);
-        const computerSelection = computerPlay();
-        console.log("Computer chose " + computerSelection);
-        let result = playRound(playerSelection, computerSelection);
-        console.log(result);
+        //console.log("Player chose " + playerSelection);
+        
+        //let result = playRound(playerSelection, computerSelection);
+        //console.log(result);
     
 }
 game();
