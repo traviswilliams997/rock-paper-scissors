@@ -51,7 +51,27 @@ function playRound(playerSelection, computerSelection){
 }
 
 
+function checkIfOver(player, computer, resultscontainer, results, winorlose, winlose){
 
+    if(player < 5 && computer < 5){
+
+        resultscontainer.appendChild(results);
+
+     }else{
+       
+        if(player > computer){
+
+         winlose.textContent = ' Game Over.You Won!';
+         winorlose.appendChild(winlose);
+         
+        }else{
+        winlose.textContent = 'Game Over. You Lost!';
+        winorlose.appendChild(winlose);
+     
+}
+}
+
+}
 
 
 
@@ -95,24 +115,10 @@ function game(){
             scorecontainer.appendChild(score);
 
         }
+
+        checkIfOver(playerScore, computerScore, resultscontainer, results, winorlose, winlose );
         
-        if(playerScore < 5 && computerScore < 5){
-
-            resultscontainer.appendChild(results);
-
-         }else{
-           
-            if(playerScore > computerScore){
-
-             winlose.textContent = ' Game Over.You Won!';
-             winorlose.appendChild(winlose);
-             
-            }else{
-            winlose.textContent = 'Game Over. You Lost!';
-            winorlose.appendChild(winlose);
-         
-    }
-    }
+        
    
     });
    
@@ -139,21 +145,7 @@ function game(){
 
         }
 
-        if(playerScore < 5 && computerScore < 5){
-
-            resultscontainer.appendChild(results);
-
-         }else{
-           
-            if(playerScore > computerScore){
-
-             winlose.textContent = ' Game Over.You Won!';
-             winorlose.appendChild(winlose);
-            }else{
-            winlose.textContent = 'Game Over. You Lost!';
-            winorlose.appendChild(winlose);
-    }
-   }
+        checkIfOver(playerScore, computerScore, resultscontainer, results, winorlose, winlose );
 
 
         
@@ -181,22 +173,8 @@ function game(){
             scorecontainer.appendChild(score);
 
         }
-        if(playerScore < 5 && computerScore < 5){
-
-            resultscontainer.appendChild(results);
-
-         }else{
-           
-            if(playerScore > computerScore){
-
-             winlose.textContent = ' Game Over.You Won!';
-             winorlose.appendChild(winlose);
-            }else{
-            winlose.textContent = 'Game Over. You Lost!';
-            winorlose.appendChild(winlose);
-    }
-       }
-
+        
+        checkIfOver(playerScore, computerScore, resultscontainer, results, winorlose, winlose );
         
 
     });
