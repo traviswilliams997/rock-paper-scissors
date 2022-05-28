@@ -53,8 +53,8 @@ function playRound(playerSelection, computerSelection){
 
 function game(){
 
-    //5 rounds of rock paper scissors
-    for(let i = 0; i < 5; i++){
+    
+    
         
         //input variable to store before making case insesitive
         let userInput;
@@ -82,6 +82,6 @@ function game(){
         console.log("Computer chose " + computerSelection);
         let result = playRound(playerSelection, computerSelection);
         console.log(result);
-    }
+    
 }
 game();
