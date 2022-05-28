@@ -52,66 +52,37 @@ function playRound(playerSelection, computerSelection){
 
 
 function game(){
-
-    // const computerSelection = computerPlay();
   
-
     const btnrock = document.querySelector('#rock');
-
-    // btnrock.addEventListener('click', function() { 
-    //     console.log('Player chose Rock and computer chose ' + computerSelection );
-    // });
+    const btnpaper = document.querySelector('#paper');
+    const btnscissors = document.querySelector('#scissors');
+    const resultscontainer = document.querySelector('#resultscontainer');
 
     btnrock.addEventListener('click', function() { 
-        console.log(playRound('ROCK', computerPlay())); 
+        const results = document.createElement('div');
+        results.classList.add('results');
+        let whoWon = playRound('ROCK', computerPlay());
+        results.textContent = ` ${ whoWon } `;
+        resultscontainer.appendChild(results);
     });
-
-    const btnpaper = document.querySelector('#paper');
-
-    // btnpaper.addEventListener('click', function() { 
-    //     console.log('Player chose Paper and computer chose ' + computerSelection );
-    // });
-
+   
     btnpaper.addEventListener('click', function() { 
-        console.log(playRound('PAPER', computerPlay()));
+        const results = document.createElement('div');
+        results.classList.add('results');
+        let whoWon = playRound('PAPER', computerPlay());
+        results.textContent = ` ${ whoWon } `;
+        resultscontainer.appendChild(results);
      });
 
-    const btnscissors = document.querySelector('#scissors');
-
-    // btnscissors.addEventListener('click', function() {
-    //     console.log('Player chose Scissors and computer chose ' + computerSelection )
-    // });
-
     btnscissors.addEventListener('click', function() {
-        console.log(playRound('SCISSORS', computerPlay()));
+        const results = document.createElement('div');
+        results.classList.add('results');
+        let whoWon = playRound('SCISSORS', computerPlay());
+        results.textContent = ` ${ whoWon } `;
+        resultscontainer.appendChild(results);
+
     });
-    
         
-    //     //input variable to store before making case insesitive
-    //     let userInput;
-    //     //case insesitive user input variable
-    //     let playerSelection;
-        
-    //     let keepGoing = true;
-
-    //     //check if user input is rock paper or scissors. force them to enter correct input
-    //     while(keepGoing){
-    //     userInput = prompt("Enter Rock, Paper or Scissors");
-    //     playerSelection = userInput.toUpperCase();
-
-    //         if(playerSelection === "ROCK" || playerSelection === "PAPER" || playerSelection ==="SCISSORS" ){
-    //             keepGoing = false;
-
-    //         }else{
-    //             console.log("Invalid entry")
-    //         }
-
-    // }
-        
-        //console.log("Player chose " + playerSelection);
-        
-        //let result = playRound(playerSelection, computerSelection);
-        //console.log(result);
-    
 }
+
 game();
