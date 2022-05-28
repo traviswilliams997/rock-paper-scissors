@@ -51,18 +51,51 @@ function playRound(playerSelection, computerSelection){
 }
 
 
+
+
+
+
 function game(){
-  
+
+    let playerScore = 0;
+    let computerScore = 0;
+
+    
+
+ 
     const btnrock = document.querySelector('#rock');
     const btnpaper = document.querySelector('#paper');
     const btnscissors = document.querySelector('#scissors');
     const resultscontainer = document.querySelector('#resultscontainer');
+    const scorecontainer = document.querySelector('#scorecontainer');
+    const score = document.createElement('div');
+    score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+    scorecontainer.appendChild(score);
 
     btnrock.addEventListener('click', function() { 
         const results = document.createElement('div');
         results.classList.add('results');
         let whoWon = playRound('ROCK', computerPlay());
         results.textContent = ` ${ whoWon } `;
+
+       
+
+        if(whoWon.search("Win!") != -1){
+            playerScore++;
+            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            scorecontainer.appendChild(score);
+
+        }else if(whoWon.search("Lose!") != -1){
+            computerScore++;
+            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            scorecontainer.appendChild(score);
+
+        }else{
+            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            scorecontainer.appendChild(score);
+
+        }
+        
         resultscontainer.appendChild(results);
     });
    
@@ -71,6 +104,24 @@ function game(){
         results.classList.add('results');
         let whoWon = playRound('PAPER', computerPlay());
         results.textContent = ` ${ whoWon } `;
+
+
+        if(whoWon.search("Win!") != -1){
+            playerScore++;
+            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            scorecontainer.appendChild(score);
+
+        }else if(whoWon.search("Lose!") != -1){
+            computerScore++;
+            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            scorecontainer.appendChild(score);
+
+        }else{
+            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            scorecontainer.appendChild(score);
+
+        }
+
         resultscontainer.appendChild(results);
      });
 
@@ -79,10 +130,33 @@ function game(){
         results.classList.add('results');
         let whoWon = playRound('SCISSORS', computerPlay());
         results.textContent = ` ${ whoWon } `;
+
+
+        if(whoWon.search("Win!") != -1){
+            playerScore++;
+            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            scorecontainer.appendChild(score);
+
+        }else if(whoWon.search("Lose!") != -1){
+            computerScore++;
+            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            scorecontainer.appendChild(score);
+
+        }else{
+            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            scorecontainer.appendChild(score);
+
+        }
+
         resultscontainer.appendChild(results);
 
     });
-        
+
+    if(playerScore == 5 || computerScore == 5){
+        return;
+    }
+ 
+
 }
 
 game();
