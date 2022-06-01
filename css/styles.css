@@ -7,7 +7,6 @@ body, html {
 body{
     display: flex;
     flex-direction: column;
-    /* border: 1px solid black; */
 }
 #container{
     flex-grow: 1;
@@ -55,7 +54,15 @@ h1{
     margin-left: 10px;
     margin-right: 10px;
     background-color: black;
-    /* border: white; */
+
+}
+#selectioncontainer button:hover{
+    height: 220px;
+    width: 220px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: black;
+    border: 2px solid white;
 
 }
 #winorlose{
