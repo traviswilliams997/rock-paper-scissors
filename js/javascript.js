@@ -98,7 +98,7 @@ function game(){
     const winorlose = document.querySelector('#winorlose');
     const winlose = document.createElement('div');
     const score = document.createElement('div');
-    score.textContent = ` Player score is ${ playerScore } Computer  score is ${ computerScore } `;
+    score.textContent = ` Player Score: ${ playerScore } Computer  Score: ${ computerScore } `;
     scorecontainer.appendChild(score);
     
     
@@ -114,16 +114,16 @@ function game(){
         //Increments the appropiate players score based on that information and displays it  
         if(whoWon.search("Win!") != -1){
             playerScore++;
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
+            score.textContent = ` Player Score: ${ playerScore }  Computer  Score: ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }else if(whoWon.search("Lose!") != -1){
             computerScore++;
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
+            score.textContent = ` Player Score: ${ playerScore }  Computer  Score: ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }else{
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
+            score.textContent = ` Player Score: ${ playerScore }  Computer  Score: ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }
@@ -147,16 +147,16 @@ function game(){
 
         if(whoWon.search("Win!") != -1){
             playerScore++;
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
+            score.textContent = ` Player Score: ${ playerScore }  Computer  Score: ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }else if(whoWon.search("Lose!") != -1){
             computerScore++;
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
+            score.textContent = ` Player Score: ${ playerScore }  Computer  Score: ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }else{
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
+            score.textContent = ` Player Score: ${ playerScore }  Computer  Score: ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }
@@ -182,16 +182,16 @@ function game(){
 
         if(whoWon.search("Win!") != -1){
             playerScore++;
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
+            score.textContent = ` Player Score: ${ playerScore }  Computer  Score: ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }else if(whoWon.search("Lose!") != -1){
             computerScore++;
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }`;
+            score.textContent = ` Player Score: ${ playerScore }  Computer  Score: ${ computerScore }`;
             scorecontainer.appendChild(score);
 
         }else{
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
+            score.textContent = ` Player Score is ${ playerScore }  Computer  Score: ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }
