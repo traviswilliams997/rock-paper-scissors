@@ -57,6 +57,8 @@ function checkIfOver(player, computer, resultscontainer, result, winorlose, winl
     if(player < 5 && computer < 5){
 
         resultscontainer.appendChild(result);
+        winlose.textContent = '';
+        winorlose.appendChild(winlose);
         
        
 
