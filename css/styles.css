@@ -49,16 +49,16 @@ h1{
     
 }
 #selectioncontainer button{
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
     margin-left: 10px;
     margin-right: 10px;
     background-color: black;
 
 }
 #selectioncontainer button:hover{
-    height: 220px;
-    width: 220px;
+    height: 255px;
+    width: 255px;
     margin-left: 10px;
     margin-right: 10px;
     background-color: black;
