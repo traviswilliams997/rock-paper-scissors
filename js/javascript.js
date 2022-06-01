@@ -51,11 +51,14 @@ function playRound(playerSelection, computerSelection){
 }
 
 //this functions checks if either the play or computer has 5 points and announces the winner
-function checkIfOver(player, computer, resultscontainer, results, winorlose, winlose){
+function checkIfOver(player, computer, resultscontainer, result, winorlose, winlose){
+    
 
     if(player < 5 && computer < 5){
 
-        resultscontainer.appendChild(results);
+        resultscontainer.appendChild(result);
+        
+       
 
      }else{
        
@@ -91,59 +94,56 @@ function game(){
     const score = document.createElement('div');
     score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
     scorecontainer.appendChild(score);
+    const results = document.createElement('div');
+    results.classList.add('results');
 
     //button for player to choose rock
     btnrock.addEventListener('click', function() { 
-        const results = document.createElement('div');
-        results.classList.add('results');
         let whoWon = playRound('ROCK', computerPlay());
         results.textContent = ` ${ whoWon } `;
-
-       
+              
         //Determines who won the round by checking if the word 'Win!' or 'Lose!' is in the string returned from the playRound function. 
-        //Icrements the appropiate players score based on that information and displays it  
+        //Increments the appropiate players score based on that information and displays it  
         if(whoWon.search("Win!") != -1){
             playerScore++;
-            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }. `;
             scorecontainer.appendChild(score);
 
         }else if(whoWon.search("Lose!") != -1){
             computerScore++;
-            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }. `;
             scorecontainer.appendChild(score);
 
         }else{
-            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }. `;
             scorecontainer.appendChild(score);
 
         }
 
         checkIfOver(playerScore, computerScore, resultscontainer, results, winorlose, winlose );
-        
+     
         
    
     });
    
     //button for player to choose paper
-    btnpaper.addEventListener('click', function() { 
-        const results = document.createElement('div');
-        results.classList.add('results');
+    btnpaper.addEventListener('click', function() {     
         let whoWon = playRound('PAPER', computerPlay());
         results.textContent = ` ${ whoWon } `;
 
 
         if(whoWon.search("Win!") != -1){
             playerScore++;
-            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }. `;
             scorecontainer.appendChild(score);
 
         }else if(whoWon.search("Lose!") != -1){
             computerScore++;
-            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }. `;
             scorecontainer.appendChild(score);
 
         }else{
-            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }. `;
             scorecontainer.appendChild(score);
 
         }
@@ -159,24 +159,22 @@ function game(){
     //button for player to choose scissors
 
     btnscissors.addEventListener('click', function() {
-        const results = document.createElement('div');
-        results.classList.add('results');
         let whoWon = playRound('SCISSORS', computerPlay());
         results.textContent = ` ${ whoWon } `;
 
 
         if(whoWon.search("Win!") != -1){
             playerScore++;
-            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }else if(whoWon.search("Lose!") != -1){
             computerScore++;
-            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }`;
             scorecontainer.appendChild(score);
 
         }else{
-            score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }
