@@ -64,12 +64,14 @@ function checkIfOver(player, computer, resultscontainer, result, winorlose, winl
        
         if(player > computer){
 
-         winlose.textContent = ' Game Over.You Won!';
-         winorlose.appendChild(winlose);
+        winlose.textContent = ' Game Over.You Won!';
+        winorlose.appendChild(winlose);
+       
          
         }else{
         winlose.textContent = 'Game Over. You Lost!';
         winorlose.appendChild(winlose);
+       
      
 }
 }
@@ -83,6 +85,8 @@ function game(){
     let playerScore = 0;
     let computerScore = 0;
 
+   
+
  
     const btnrock = document.querySelector('#rock');
     const btnpaper = document.querySelector('#paper');
@@ -92,8 +96,10 @@ function game(){
     const winorlose = document.querySelector('#winorlose');
     const winlose = document.createElement('div');
     const score = document.createElement('div');
-    score.textContent = ` Player score is ${ playerScore }. Computer  score is ${ computerScore }. `;
+    score.textContent = ` Player score is ${ playerScore } Computer  score is ${ computerScore } `;
     scorecontainer.appendChild(score);
+    
+    
     const results = document.createElement('div');
     results.classList.add('results');
 
@@ -106,21 +112,26 @@ function game(){
         //Increments the appropiate players score based on that information and displays it  
         if(whoWon.search("Win!") != -1){
             playerScore++;
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }else if(whoWon.search("Lose!") != -1){
             computerScore++;
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }else{
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }
 
         checkIfOver(playerScore, computerScore, resultscontainer, results, winorlose, winlose );
+
+        if(playerScore >= 5 || computerScore >= 5){
+            playerScore = 0;
+            computerScore = 0;
+        }
      
         
    
@@ -134,21 +145,25 @@ function game(){
 
         if(whoWon.search("Win!") != -1){
             playerScore++;
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }else if(whoWon.search("Lose!") != -1){
             computerScore++;
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }else{
-            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore }. `;
+            score.textContent = ` Player score is ${ playerScore }  Computer  score is ${ computerScore } `;
             scorecontainer.appendChild(score);
 
         }
 
         checkIfOver(playerScore, computerScore, resultscontainer, results, winorlose, winlose );
+        if(playerScore >= 5 || computerScore >= 5){
+            playerScore = 0;
+            computerScore = 0;
+        }
 
 
         
@@ -180,6 +195,10 @@ function game(){
         }
         
         checkIfOver(playerScore, computerScore, resultscontainer, results, winorlose, winlose );
+        if(playerScore >= 5 || computerScore >= 5){
+            playerScore = 0;
+            computerScore = 0;
+        }
         
 
     });
